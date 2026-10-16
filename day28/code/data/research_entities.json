@@ -1,0 +1,52 @@
+[
+  {
+    "ticker": "NVDA",
+    "company_name": "NVIDIA Corporation",
+    "industry": "Semiconductors & AI Accelerators",
+    "cagr": 142.0,
+    "fy_revenue_billions": 120.8,
+    "gross_margin_pct": 75.4,
+    "ev_ebitda": 34.5,
+    "fcf_yield": 4.2,
+    "dcf_target_price": 168.0,
+    "moat_score": 9.2,
+    "competitors": [
+      "AMD",
+      "Intel",
+      "Qualcomm"
+    ],
+    "trends": [
+      "Enterprise AI Capex",
+      "Blackwell architecture ramp"
+    ],
+    "key_risks": [
+      "Hyperscaler custom silicon (ASIC) substitution",
+      "Regional export restrictions"
+    ]
+  },
+  {
+    "ticker": "SNOW",
+    "company_name": "Snowflake Inc.",
+    "industry": "Cloud Data Platform & AI Data Cloud",
+    "cagr": 24.5,
+    "fy_revenue_billions": 3.2,
+    "gross_margin_pct": 72.0,
+    "ev_ebitda": 32.4,
+    "fcf_yield": 4.1,
+    "dcf_target_price": 195.0,
+    "moat_score": 8.5,
+    "competitors": [
+      "Databricks",
+      "Google BigQuery",
+      "AWS Redshift"
+    ],
+    "trends": [
+      "Iceberg table interoperability",
+      "Cortex AI workflows"
+    ],
+    "key_risks": [
+      "Hyperscaler bundling pricing pressure",
+      "Lakehouse convergence"
+    ]
+  }
+]

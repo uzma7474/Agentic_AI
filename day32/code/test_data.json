@@ -1,0 +1,32 @@
+[
+  {
+    "user_input": "What is the capital of France?",
+    "response": "Paris",
+    "retrieved_contexts": ["Paris is the capital and most populous city of France."]
+  },
+  {
+    "user_input": "Who wrote Romeo and Juliet?",
+    "response": "William Shakespeare wrote Romeo and Juliet.",
+    "retrieved_contexts": ["Romeo and Juliet is a tragedy written by William Shakespeare early in his career."]
+  },
+  {
+    "user_input": "What is the population of New York City as of 2020?",
+    "response": "The population is approximately 12 million people.",
+    "retrieved_contexts": ["New York City's population was 8,804,190 as of the 2020 census."]
+  },
+  {
+    "user_input": "When was the Eiffel Tower built?",
+    "response": "The Eiffel Tower was completed in 1850.",
+    "retrieved_contexts": ["The Eiffel Tower was completed in 1889 and was the entrance to the 1889 World's Fair."]
+  },
+  {
+    "user_input": "What is the tallest mountain in the world?",
+    "response": "Mount Everest is located in the Himalayas.",
+    "retrieved_contexts": ["Mount Everest, at 8,848.86 meters, is Earth's highest mountain above sea level."]
+  },
+  {
+    "user_input": "What is the GDP of Mars?",
+    "response": "I cannot answer that question.",
+    "retrieved_contexts": ["Mars is the fourth planet from the Sun."]
+  }
+]

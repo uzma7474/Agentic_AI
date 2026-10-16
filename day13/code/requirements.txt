@@ -1,0 +1,4 @@
+openai-agent
+# openai-agent-python-providers
+httpx
+python-dotenv

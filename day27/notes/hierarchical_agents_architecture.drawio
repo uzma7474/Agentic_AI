@@ -1,0 +1,141 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/25.0.2 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="25.0.2">
+  <diagram id="hierarchical-agents-arch" name="Pattern 13 Architecture">
+    <mxGraphModel dx="61760" dy="25689" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1080" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="b1" value="① PRESENTATION LAYER" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#CBD5E1;dashed=1;verticalAlign=top;align=left;spacingLeft=14;spacingTop=6;fontSize=12;fontStyle=1;fontColor=#475569;" parent="1" vertex="1">
+          <mxGeometry x="-10" y="60" width="760" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="main" value="main.py — CLI Entry Point (Rich)&#xa;prompt ticker → InvestmentResearchCrew.kickoff_research()&#xa;renders Panels, Tables &amp; Markdown memo" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF2FF;strokeColor=#4F46E5;fontColor=#3730A3;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="20" y="110" width="330" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="streamlit" value="streamlit_app.py — Web Dashboard&#xa;independent entry point (does NOT use the crew)&#xa;ticker + mandate → metrics + CIO memo" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF2FF;strokeColor=#4F46E5;fontColor=#3730A3;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="380" y="110" width="340" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="b2" value="② HIERARCHICAL ORCHESTRATION LAYER  (manager agent delegates to junior analyst agents)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#CBD5E1;dashed=1;verticalAlign=top;align=left;spacingLeft=14;spacingTop=6;fontSize=12;fontStyle=1;fontColor=#475569;" parent="1" vertex="1">
+          <mxGeometry x="-10" y="270" width="760" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="cio" value="CHIEF INVESTMENT OFFICER — MANAGER AGENT&#xa;crew.py · InvestmentResearchCrew.kickoff_research()&#xa;decomposes work → delegates → synthesizes memo" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4F46E5;strokeColor=#3730A3;fontColor=#FFFFFF;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="160" y="310" width="340" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="j1" value="JUNIOR · Principal Equity Research Analyst&#xa;SEC 10-K facts → 5-yr DCF target price" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0E7FF;strokeColor=#6366F1;fontColor=#312E81;" parent="1" vertex="1">
+          <mxGeometry x="20" y="420" width="330" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="j2" value="JUNIOR · Chief Risk &amp; Geopolitical Officer&#xa;downside / supply-chain / competitive risks" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0E7FF;strokeColor=#6366F1;fontColor=#312E81;" parent="1" vertex="1">
+          <mxGeometry x="370" y="420" width="330" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="b3" value="③ AGENT &amp; TASK DEFINITIONS · TOOLS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#CBD5E1;dashed=1;verticalAlign=top;align=left;spacingLeft=14;spacingTop=6;fontSize=12;fontStyle=1;fontColor=#475569;" parent="1" vertex="1">
+          <mxGeometry x="-30" y="610" width="760" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="agents" value="agents.py&#xa;InvestmentAgentSpecs&#xa;CIO / Analyst / Risk&#xa;Officer personas" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0E7FF;strokeColor=#6366F1;fontColor=#312E81;" parent="1" vertex="1">
+          <mxGeometry y="660" width="220" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="tasks" value="tasks.py&#xa;InvestmentTasks&#xa;fundamental research ·&#xa;risk stress test ·&#xa;executive memo" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0E7FF;strokeColor=#6366F1;fontColor=#312E81;" parent="1" vertex="1">
+          <mxGeometry x="240" y="660" width="220" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="tools" value="tools.py&#xa;fetch_sec_filing_financials(ticker)&#xa;calculate_dcf_valuation(...)&#xa;━━━━━━━━━━━━━━━━━━━━━&#xa;deterministic junior-analyst work" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#D97706;fontColor=#92400E;" parent="1" vertex="1">
+          <mxGeometry x="480" y="660" width="220" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="b4" value="④ OUTPUT SCHEMA" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#CBD5E1;dashed=1;verticalAlign=top;align=left;spacingLeft=14;spacingTop=6;fontSize=12;fontStyle=1;fontColor=#475569;" parent="1" vertex="1">
+          <mxGeometry x="860" y="270" width="480" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="out" value="InvestmentRecommendation (Pydantic)&#xa;rating · target price · upside % ·&#xa;thesis pillars · critical risks ·&#xa;executive memo" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#10B981;strokeColor=#047857;fontColor=#FFFFFF;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="890" y="320" width="420" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="models" value="models.py — validates / serialises the recommendation schema" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FDF2F8;strokeColor=#DB2777;fontColor=#9D174D;" parent="1" vertex="1">
+          <mxGeometry x="890" y="440" width="420" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="b5" value="⑤ SHARED SERVICES  (../utils, ../data)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#CBD5E1;dashed=1;verticalAlign=top;align=left;spacingLeft=14;spacingTop=6;fontSize=12;fontStyle=1;fontColor=#475569;" parent="1" vertex="1">
+          <mxGeometry x="860" y="550" width="480" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="db" value="data/db.py — get_research_entity() / get_market_asset()&#xa;JSON store access layer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0F2FE;strokeColor=#0284C7;fontColor=#075985;" parent="1" vertex="1">
+          <mxGeometry x="890" y="600" width="420" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="llm" value="utils/llm_client.py — call_real_llm()&#xa;pooled requests.Session · bounded tokens · JSON mode" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0F2FE;strokeColor=#0284C7;fontColor=#075985;" parent="1" vertex="1">
+          <mxGeometry x="890" y="680" width="420" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="b6" value="⑥ EXTERNAL RUNTIME &amp; DATA STORE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#CBD5E1;dashed=1;verticalAlign=top;align=left;spacingLeft=14;spacingTop=6;fontSize=12;fontStyle=1;fontColor=#475569;" parent="1" vertex="1">
+          <mxGeometry x="860" y="870" width="480" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="json" value="data/research_entities.json&#xa;data/market_assets.json" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#CCFBF1;strokeColor=#0D9488;fontColor=#115E59;" parent="1" vertex="1">
+          <mxGeometry x="880" y="920" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ollama" value="Ollama Server · localhost:11434&#xa;model: llama3.2:3b (OLLAMA_MODEL)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#CCFBF1;strokeColor=#0D9488;fontColor=#115E59;" parent="1" vertex="1">
+          <mxGeometry x="1110" y="920" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="ticker · kickoff_research()" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.0735;entryY=0;entryDx=0;entryDy=0;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=classic;endFill=1;strokeColor=#4F46E5;" parent="1" source="main" target="cio" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="render (Rich panels / tables / Markdown)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.7879;entryY=1;entryDx=0;entryDy=0;dashed=1;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=classic;endFill=1;strokeColor=#047857;" parent="1" source="out" target="main" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1100" y="250" />
+              <mxPoint x="350" y="250" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3" value="delegate: filings + DCF" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.206;exitY=1;exitDx=0;exitDy=0;entryX=0.636;entryY=0;entryDx=0;entryDy=0;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=classic;endFill=1;strokeColor=#4F46E5;" parent="1" source="cio" target="j1" edge="1" />
+        <mxCell id="e4" value="delegate: risk stress test" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.794;exitY=1;exitDx=0;exitDy=0;entryX=0.1818;entryY=0;entryDx=0;entryDy=0;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=classic;endFill=1;strokeColor=#4F46E5;" parent="1" source="cio" target="j2" edge="1" />
+        <mxCell id="e5" value="findings" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.4545;exitY=0;exitDx=0;exitDy=0;entryX=0.0294;entryY=1;entryDx=0;entryDy=0;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=classic;endFill=1;strokeColor=#6366F1;" parent="1" source="j1" target="cio" edge="1" />
+        <mxCell id="e6" value="findings" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.3636;exitY=0;exitDx=0;exitDy=0;entryX=0.9706;entryY=1;entryDx=0;entryDy=0;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=classic;endFill=1;strokeColor=#6366F1;" parent="1" source="j2" target="cio" edge="1" />
+        <mxCell id="e7" value="synthesises memo" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=classic;endFill=1;strokeColor=#4F46E5;" parent="1" source="cio" target="out" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="730" y="345" />
+              <mxPoint x="730" y="370" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e8" value="schema" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=classic;endFill=1;strokeColor=#DB2777;" parent="1" source="out" target="models" edge="1" />
+        <mxCell id="e9" value="uses" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=classic;endFill=1;strokeColor=#D97706;" parent="1" source="j1" target="tools" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="165" y="490" />
+              <mxPoint x="165" y="580" />
+              <mxPoint x="590" y="580" />
+            </Array>
+            <mxPoint x="165" y="550" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e10" value="get_research_entity()" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=classic;endFill=1;strokeColor=#D97706;" parent="1" source="tools" target="db" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="835" y="665" />
+              <mxPoint x="835" y="630" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e11" value="call_real_llm() — CIO memo prompt" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.588;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=classic;endFill=1;strokeColor=#4F46E5;" parent="1" source="cio" target="llm" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="430" y="515" />
+              <mxPoint x="850" y="515" />
+              <mxPoint x="850" y="710" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e12" value="POST /api/chat → fallback /v1/chat/completions" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.774;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=classic;endFill=1;strokeColor=#0284C7;" parent="1" source="llm" target="ollama" edge="1" />
+        <mxCell id="e13" value="read / write JSON" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.226;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=classic;endFill=1;strokeColor=#0284C7;" parent="1" source="db" target="json" edge="1" />
+        <mxCell id="e14" value="direct LLM call" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.35;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=classic;endFill=1;strokeColor=#94A3B8;" parent="1" source="streamlit" target="llm" edge="1">
+          <mxGeometry x="-0.0223" y="-4" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1350" y="165" />
+              <mxPoint x="1350" y="710" />
+            </Array>
+            <mxPoint x="4" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e15" value="get_market_asset()" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.65;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;fontSize=11;fontColor=#334155;labelBackgroundColor=#FFFFFF;endArrow=classic;endFill=1;strokeColor=#94A3B8;" parent="1" source="streamlit" target="db" edge="1">
+          <mxGeometry x="-0.2235" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1330" y="185" />
+              <mxPoint x="1330" y="630" />
+            </Array>
+            <mxPoint x="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
